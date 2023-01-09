@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import { DndContext } from "@dnd-kit/core";
 import Droppable from "../components/Droppable";
