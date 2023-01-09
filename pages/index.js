@@ -21,12 +21,13 @@ function Dnd() {
   };
 
   const handleDragEnd = (event) => {
-    setSheets({
-      ...sheets,
-      [event.over ? event.over.id : null]: event.active.id,
-      [getOldPosition(event.active.id)]:
-        sheets[event.over ? event.over.id : null],
-    });
+    if (event.over.id) {
+      setSheets({
+        ...sheets,
+        [event.over.id]: event.active.id,
+        [getOldPosition(event.active.id)]: sheets[event.over.id],
+      });
+    }
   };
 
   const style = {
