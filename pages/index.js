@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import Droppable from "../components/Droppable";
 import Draggable from "../components/Draggable";
@@ -28,10 +28,6 @@ function Dnd() {
         sheets[event.over ? event.over.id : null],
     });
   };
-
-  useEffect(() => {
-    console.log(sheets);
-  }, [sheets]);
 
   const style = {
     margin: 4,
