@@ -3,7 +3,7 @@ import { DndContext } from "@dnd-kit/core";
 import Droppable from "../components/Droppable";
 import Draggable from "../components/Draggable";
 
-export default function DndSample() {
+function Dnd() {
   const [sheets, setSheets] = useState({
     "1-1": "1",
     "1-2": "2",
@@ -57,3 +57,10 @@ export default function DndSample() {
     </DndContext>
   );
 }
+
+export default dynamic(
+  async () => {
+    return Dnd;
+  },
+  { ssr: false }
+);
